@@ -1,20 +1,25 @@
 import React from 'react';
-import {StyleSheet, StatusBar, View, Text} from 'react-native';
+import {StyleSheet, StatusBar, View} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
 import CategoriesScreen from './screens/CategoriesScreen';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <>
-      <View style={styles.container}>
-        <StatusBar barStyle={'light-content'} />
-        <CategoriesScreen />
-      </View>
+      <StatusBar barStyle={'light-content'} />
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="MealsCategories" component={CategoriesScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#14213e',
-  },
+  container: {},
 });
