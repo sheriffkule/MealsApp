@@ -5,7 +5,7 @@ function CategoryGridTile({title, color}) {
   return (
     <View style={styles.gridItem}>
       <Pressable
-        android_ripple={{color: 'blue'}}
+        android_ripple={{color: 'darkblue'}}
         style={({pressed}) => [
           styles.button,
           pressed ? styles.buttonPressed : null,
@@ -23,31 +23,36 @@ export default CategoryGridTile;
 const styles = StyleSheet.create({
   gridItem: {
     flex: 1,
-    margin: 15,
-    hight: 150,
+    margin: 10,
+    height: 150,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#ff6669',
     elevation: 4,
-    backgroundColor: 'white',
-    shadowColor: 'black',
+    backgroundColor: 'black',
+    shadowColor: 'white',
     shadowOpacity: 0.25,
     shadowOffset: {width: 0, height: 2},
-    shadowRadius: 6,
+    shadowRadius: 7,
     overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
   },
   button: {
     flex: 1,
   },
   buttonPressed: {
-    opacity: 0.5,
+    opacity: 0.4,
   },
   innerContainer: {
     flex: 1,
-    padding: 15,
-    borderRadius: 10,
+    padding: 14,
+    borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
   },
   title: {
     fontWeight: '700',
     fontSize: 20,
+    color: 'black',
+    textDecorationLine: 'underline',
   },
 });
