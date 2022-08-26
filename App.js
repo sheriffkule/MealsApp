@@ -15,7 +15,6 @@ export default function App() {
       <StatusBar barStyle={'light-content'} />
       <NavigationContainer>
         <Stack.Navigator
-          navigationOptions
           screenOptions={{
             headerStyle: {backgroundColor: '#05688f'},
             headerTintColor: '#ebd3ad',
@@ -24,7 +23,7 @@ export default function App() {
             contentStyle: {backgroundColor: '#274754'},
             animation: 'flip',
             statusBarAnimation: 'slide',
-            headerTitleAlign: 'center'
+            headerTitleAlign: 'center',
             //navigationBarColor: 'black',
           }}>
           <Stack.Screen
