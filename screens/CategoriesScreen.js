@@ -1,6 +1,7 @@
 import React from 'react';
 import {FlatList} from 'react-native';
 import CategoryGridTile from '../components/CategoryGridTile';
+import {LinearGradient} from 'react-native-linear-gradient';
 
 import {CATEGORIES} from '../data/dummy-data';
 

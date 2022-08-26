@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, FlatList} from 'react-native';
+import {LinearGradient} from 'react-native-linear-gradient';
 
 import {MEALS} from '../data/dummy-data';
 import MealItem from '../components/MealItem';
