@@ -19,7 +19,7 @@ export default function App() {
             headerStyle: {backgroundColor: '#05688f'},
             headerTintColor: '#ebd3ad',
             headerBlurEffect: 'systemThinMaterialDark',
-            headerTitleStyle: {fontSize: 24, fontWeight: 'bold'},
+            headerTitleStyle: {fontSize: 30, fontWeight: '600'},
             contentStyle: {backgroundColor: '#274754'},
             animation: 'flip',
             statusBarAnimation: 'slide',
