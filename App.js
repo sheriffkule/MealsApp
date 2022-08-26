@@ -1,10 +1,11 @@
 import React from 'react';
-import {StyleSheet, StatusBar} from 'react-native';
+import {StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import CategoriesScreen from './screens/CategoriesScreen';
 import MealsOverviewScreen from './screens/MealsOverviewScreen';
+import MealDetailScreen from './screens/MealDetailScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,11 +20,11 @@ export default function App() {
             headerStyle: {backgroundColor: '#05688f'},
             headerTintColor: '#ebd3ad',
             headerBlurEffect: 'systemThinMaterialDark',
+            headerTitleStyle: {fontSize: 24, fontWeight: 'bold'},
             contentStyle: {backgroundColor: '#274754'},
             animation: 'flip',
-            headerBackTitleStyle: {fontSize: '20'},
             statusBarAnimation: 'slide',
-            headerTitleAlign: 'center',
+            headerTitleAlign: 'center'
             //navigationBarColor: 'black',
           }}>
           <Stack.Screen
@@ -43,14 +44,18 @@ export default function App() {
             //   };
             // }}
           />
+          <Stack.Screen
+            name="Meal Detail Screen"
+            component={MealDetailScreen}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>
   );
 }
 
-const styles = StyleSheet.create({
-  rootScreen: {
-    flex: 1,
-  },
-});
+// const styles = StyleSheet.create({
+//   rootScreen: {
+//     flex: 1,
+//   },
+// });
