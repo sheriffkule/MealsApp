@@ -21,6 +21,7 @@ export default function App() {
             headerBlurEffect: 'systemThinMaterialDark',
             contentStyle: {backgroundColor: '#274754'},
             animation: 'flip',
+            headerBackTitleStyle: {fontSize: '20'},
             statusBarAnimation: 'slide',
             headerTitleAlign: 'center',
             //navigationBarColor: 'black',
@@ -35,9 +36,12 @@ export default function App() {
           <Stack.Screen
             name="MealsOverview"
             component={MealsOverviewScreen}
-            options={{
-              title: 'Meal Overview',
-            }}
+            // options={({route, navigation}) => {
+            //   const catId = route.params.categoryId;
+            //   return {
+            //     title: catId,
+            //   };
+            // }}
           />
         </Stack.Navigator>
       </NavigationContainer>
@@ -46,5 +50,7 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  rootScreen: {
+    flex: 1,
+  },
 });
