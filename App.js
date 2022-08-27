@@ -19,12 +19,12 @@ export default function App() {
             headerStyle: {backgroundColor: '#05688f'},
             headerTintColor: '#ebd3ad',
             headerBlurEffect: 'systemThinMaterialDark',
-            headerTitleStyle: {fontSize: 30, fontWeight: '600'},
+            headerTitleStyle: {fontSize: 20, fontWeight: '600'},
             contentStyle: {backgroundColor: '#274754'},
             animation: 'flip',
             statusBarAnimation: 'slide',
             headerTitleAlign: 'center',
-            //navigationBarColor: 'black',
+            navigationBarColor: 'black',
           }}>
           <Stack.Screen
             name="MealsCategories"
@@ -43,10 +43,7 @@ export default function App() {
             //   };
             // }}
           />
-          <Stack.Screen
-            name="Meal Detail Screen"
-            component={MealDetailScreen}
-          />
+          <Stack.Screen name="Meal Detail" component={MealDetailScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
