@@ -3,6 +3,7 @@ import {StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import CategoriesScreen from './screens/CategoriesScreen';
 import MealsOverviewScreen from './screens/MealsOverviewScreen';
@@ -19,21 +20,37 @@ function DrawerNavigator() {
       screenOptions={{
         headerStyle: {backgroundColor: '#05688f'},
         headerTintColor: '#ebd3ad',
-        headerBlurEffect: 'systemThinMaterialDark',
+        headerBlurEffect: 'systemThinMaterialDark', //IOS only
         headerTitleStyle: {fontSize: 20, fontWeight: '600'},
         sceneContainerStyle: {backgroundColor: '#274754'},
         animation: 'flip',
         statusBarAnimation: 'slide',
         headerTitleAlign: 'center',
+        drawerActiveBackgroundColor: '#1d3658',
+        drawerContentStyle: {backgroundColor: '#011628'},
+        drawerActiveTintColor: '#0eaf69',
+        drawerInactiveTintColor: '#0a834d',
+        drawerType: 'slide',
       }}>
       <Drawer.Screen
         name="Categories"
         component={CategoriesScreen}
         options={{
           title: 'All Categories',
+          drawerIcon: ({color, size}) => (
+            <Ionicons name="list-outline" color={color} size={size} />
+          ),
         }}
       />
-      <Drawer.Screen name="Favourites" component={FavouriteScreen} />
+      <Drawer.Screen
+        name="Favourites"
+        component={FavouriteScreen}
+        options={{
+          drawerIcon: ({color, size}) => (
+            <Ionicons name="md-star" color={color} size={size} />
+          ),
+        }}
+      />
     </Drawer.Navigator>
   );
 }
@@ -47,12 +64,14 @@ export default function App() {
           screenOptions={{
             headerStyle: {backgroundColor: '#05688f'},
             headerTintColor: '#ebd3ad',
+            headerTransparent: true,
             headerBlurEffect: 'systemThinMaterialDark',
             headerTitleStyle: {fontSize: 20, fontWeight: '600'},
             contentStyle: {backgroundColor: '#274754'},
-            animation: 'flip',
+            animation: 'fade',
             statusBarAnimation: 'slide',
             headerTitleAlign: 'center',
+            animationTypeForReplace: 'push',
             //navigationBarColor: 'black',
           }}>
           <Stack.Screen
