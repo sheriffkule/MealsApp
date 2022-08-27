@@ -24,7 +24,7 @@ export default function App() {
             animation: 'flip',
             statusBarAnimation: 'slide',
             headerTitleAlign: 'center',
-            navigationBarColor: 'black',
+            //navigationBarColor: 'black',
           }}>
           <Stack.Screen
             name="MealsCategories"
