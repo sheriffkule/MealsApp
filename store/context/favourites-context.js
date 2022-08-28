@@ -21,7 +21,7 @@ function FavouritesContextProvider({children}) {
 
   const value = {
     ids: favouriteMealIds,
-    addFavourete: addFavourite,
+    addFavourite: addFavourite,
     removeFavourite: removeFavourite,
   };
 
