@@ -1,5 +1,5 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
+import {StatusBar, StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
@@ -9,6 +9,7 @@ import CategoriesScreen from './screens/CategoriesScreen';
 import MealsOverviewScreen from './screens/MealsOverviewScreen';
 import MealDetailScreen from './screens/MealDetailScreen';
 import FavouriteScreen from './screens/FavouriteScreen';
+import {FavouritesContext} from './store/context/favourites-context';
 
 const Stack = createNativeStackNavigator();
 
@@ -59,38 +60,44 @@ export default function App() {
   return (
     <>
       <StatusBar barStyle={'light-content'} />
-      <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{
-            headerStyle: {backgroundColor: '#05688f'},
-            headerTintColor: '#ebd3ad',
-            headerTransparent: true,
-            headerBlurEffect: 'systemThinMaterialDark',
-            headerTitleStyle: {fontSize: 20, fontWeight: '600'},
-            contentStyle: {backgroundColor: '#274754'},
-            animation: 'fade',
-            statusBarAnimation: 'slide',
-            headerTitleAlign: 'center',
-            animationTypeForReplace: 'push',
-            //navigationBarColor: 'black',
-          }}>
-          <Stack.Screen
-            name="Drawer"
-            component={DrawerNavigator}
-            options={{
-              headerShown: false,
-            }}
-          />
-          <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
-          <Stack.Screen name="Meal Detail" component={MealDetailScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <FavouritesContext>
+        <NavigationContainer>
+          <Stack.Navigator
+            screenOptions={{
+              headerStyle: {backgroundColor: '#05688f'},
+              headerTintColor: '#ebd3ad',
+              headerTransparent: true,
+              headerBlurEffect: 'systemThinMaterialDark',
+              headerTitleStyle: {fontSize: 20, fontWeight: '600'},
+              contentStyle: {backgroundColor: '#274754'},
+              animation: 'fade',
+              statusBarAnimation: 'slide',
+              headerTitleAlign: 'center',
+              animationTypeForReplace: 'push',
+              //navigationBarColor: 'black',
+            }}>
+            <Stack.Screen
+              name="Drawer"
+              component={DrawerNavigator}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="MealsOverview"
+              component={MealsOverviewScreen}
+            />
+            <Stack.Screen name="Meal Detail" component={MealDetailScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
+        \
+      </FavouritesContext>
     </>
   );
 }
 
-// const styles = StyleSheet.create({
-//   rootScreen: {
-//     flex: 1,
-//   },
-// });
+const styles = StyleSheet.create({
+  rootScreen: {
+    flex: 1,
+  },
+});
